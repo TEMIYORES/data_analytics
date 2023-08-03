@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #000300;
+  color: white;
+}
+
+.hamburger {
+  position: relative;
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+}
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  background-color: white;
+  top: 0;
+  right: 0;
+  height: 2px;
+  transition: all 0.5s;
+}
+.hamburger-top {
+  width: 24px;
+}
+.hamburger-middle {
+  width: 20px;
+  transform: translateY(7px);
+}
+.hamburger-bottom {
+  width: 16px;
+  transform: translateY(14px);
+}
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translateX(6px);
+}
+.open .hamburger-middle {
+  display: none;
+}
+.open .hamburger-bottom {
+  width: 24px;
+  transform: rotate(-45deg) translateY(6px) translateX(-6px);
+}
+
+.ityped-cursor {
+  opacity: 1;
+  -webkit-animation: blink 0.4s infinite;
+  -moz-animation: blink 0.4s infinite;
+  animation: blink 0.4s infinite;
+  animation-direction: alternate;
+  color: #00df9a;
+}
+.active {
+  color: #00df9a;
+}
+@keyframes blink {
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes blink {
+  100% {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes blink {
+  100% {
+    opacity: 0;
+  }
+}
